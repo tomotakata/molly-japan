@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import FadeInSection from "@/components/FadeInSection";
 
 const categories = [
@@ -15,6 +15,20 @@ const categories = [
 
 export default function ContactForm() {
   const [selected, setSelected] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const selectedLabel = categories.find((c) => c.value === selected)?.label;
 
   return (
     <>
@@ -88,29 +102,52 @@ export default function ContactForm() {
                 />
               </div>
 
-              {/* Category - tap-friendly buttons */}
+              {/* Category - custom dropdown */}
               <div>
-                <label className="block text-xs text-text-light tracking-[0.2em] mb-4">
+                <label className="block text-xs text-text-light tracking-[0.2em] mb-2">
                   お問い合わせ種別
                 </label>
                 <input type="hidden" name="category" value={selected} />
-                <div className="flex flex-wrap gap-3">
-                  {categories.map((cat) => (
-                    <button
-                      key={cat.value}
-                      type="button"
-                      onClick={() =>
-                        setSelected(selected === cat.value ? "" : cat.value)
-                      }
-                      className={`px-5 py-3 text-sm tracking-[0.05em] border transition-all duration-200 cursor-pointer ${
-                        selected === cat.value
-                          ? "bg-black text-white border-black"
-                          : "bg-white text-text border-border hover:border-black/40"
-                      }`}
+                <div ref={dropdownRef} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="w-full flex items-center justify-between border-b border-border py-3 text-sm text-left outline-none hover:border-black/40 transition-colors cursor-pointer"
+                  >
+                    <span className={selectedLabel ? "text-text" : "text-text-light"}>
+                      {selectedLabel || "選択してください"}
+                    </span>
+                    <svg
+                      className={`w-4 h-4 text-text-light transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      {cat.label}
-                    </button>
-                  ))}
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  {isOpen && (
+                    <div className="absolute z-20 top-full left-0 right-0 mt-1 bg-white border border-border shadow-lg max-h-80 overflow-y-auto">
+                      {categories.map((cat) => (
+                        <button
+                          key={cat.value}
+                          type="button"
+                          onClick={() => {
+                            setSelected(cat.value);
+                            setIsOpen(false);
+                          }}
+                          className={`w-full text-left px-5 py-4 text-sm transition-colors cursor-pointer border-b border-border/50 last:border-b-0 ${
+                            selected === cat.value
+                              ? "bg-black text-white"
+                              : "text-text hover:bg-bg-section"
+                          }`}
+                        >
+                          {cat.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
