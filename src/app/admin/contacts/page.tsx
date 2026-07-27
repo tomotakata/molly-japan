@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import AdminHeader from "../AdminHeader";
+import AdminShell from "../AdminShell";
 import MarkAsRead from "./MarkAsRead";
 
 export const dynamic = "force-dynamic";
@@ -19,9 +19,8 @@ export default async function AdminContactsPage() {
     .order("created_at", { ascending: false });
 
   return (
-    <>
-      <AdminHeader user={user} />
-      <div className="max-w-5xl mx-auto px-4 py-8">
+    <AdminShell user={user}>
+      <div className="max-w-5xl mx-auto px-6 py-8">
         <h1 className="text-2xl font-bold mb-6">お問い合わせ管理</h1>
 
         <div className="bg-white rounded-lg shadow overflow-hidden">
@@ -89,6 +88,6 @@ export default async function AdminContactsPage() {
           </table>
         </div>
       </div>
-    </>
+    </AdminShell>
   );
 }

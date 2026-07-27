@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect, notFound } from "next/navigation";
 import Link from "next/link";
-import AdminHeader from "../../../AdminHeader";
+import AdminShell from "../../../AdminShell";
 import NewsForm from "../../NewsForm";
 
 export const dynamic = "force-dynamic";
@@ -27,9 +27,8 @@ export default async function EditNewsPage({ params }: Props) {
   if (!article) notFound();
 
   return (
-    <>
-      <AdminHeader user={user} />
-      <div className="max-w-3xl mx-auto px-4 py-8">
+    <AdminShell user={user}>
+      <div className="max-w-3xl mx-auto px-6 py-8">
         <div className="mb-6">
           <Link
             href="/admin/news"
@@ -51,6 +50,6 @@ export default async function EditNewsPage({ params }: Props) {
           />
         </div>
       </div>
-    </>
+    </AdminShell>
   );
 }

@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import AdminHeader from "../AdminHeader";
+import AdminShell from "../AdminShell";
 
 export const dynamic = "force-dynamic";
 
@@ -18,9 +18,8 @@ export default async function AdminNewsPage() {
     .order("created_at", { ascending: false });
 
   return (
-    <>
-      <AdminHeader user={user} />
-      <div className="max-w-5xl mx-auto px-4 py-8">
+    <AdminShell user={user}>
+      <div className="max-w-5xl mx-auto px-6 py-8">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">NEWS管理</h1>
           <Link
@@ -89,6 +88,6 @@ export default async function AdminNewsPage() {
           </table>
         </div>
       </div>
-    </>
+    </AdminShell>
   );
 }

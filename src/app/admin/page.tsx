@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import AdminHeader from "./AdminHeader";
+import AdminShell from "./AdminShell";
 
 export const dynamic = "force-dynamic";
 
@@ -13,7 +13,6 @@ export default async function AdminDashboard() {
 
   if (!user) redirect("/admin/login");
 
-  // 統計情報
   const { count: newsCount } = await supabase
     .from("news")
     .select("*", { count: "exact", head: true });
@@ -28,9 +27,8 @@ export default async function AdminDashboard() {
     .eq("read", false);
 
   return (
-    <>
-      <AdminHeader user={user} />
-      <div className="max-w-5xl mx-auto px-4 py-8">
+    <AdminShell user={user}>
+      <div className="max-w-5xl mx-auto px-6 py-8">
         <h1 className="text-2xl font-bold mb-8">ダッシュボード</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -76,6 +74,6 @@ export default async function AdminDashboard() {
           </Link>
         </div>
       </div>
-    </>
+    </AdminShell>
   );
 }
