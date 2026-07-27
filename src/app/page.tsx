@@ -190,8 +190,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <FadeInSection>
             <div className="text-center mb-16">
-              <p className="text-text-light text-xs tracking-[0.4em] mb-4">RESULTS</p>
-              <h2 className="font-serif text-3xl lg:text-4xl text-primary tracking-wider">サポート実績</h2>
+              <p className="text-text-light text-xs tracking-[0.4em] mb-4">STORY</p>
+              <h2 className="font-serif text-3xl lg:text-4xl text-primary tracking-wider">経営者の今と未来を支える実績</h2>
               <div className="section-divider mx-auto mt-6" />
             </div>
           </FadeInSection>
