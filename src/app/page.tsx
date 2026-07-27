@@ -169,13 +169,14 @@ export default function Home() {
 
             <FadeInSection delay={200}>
               <div className="relative">
-                <div className="aspect-[4/5] bg-bg-section rounded-sm overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-[#f5f5f5] to-[#e8e8e8] flex items-center justify-center">
-                    <div className="text-center">
-                      <p className="font-serif text-6xl text-black/10 tracking-widest">M</p>
-                      <p className="text-xs text-text-light tracking-[0.3em] mt-2">MOLLY</p>
-                    </div>
-                  </div>
+                <div className="aspect-[4/5] rounded-sm overflow-hidden relative">
+                  <Image
+                    src="/images/concept.jpg"
+                    alt="森行秀和 ─ 株式会社Molly 代表取締役"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-24 h-24 border border-black/10" />
               </div>
