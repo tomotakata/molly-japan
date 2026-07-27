@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import FadeInSection from "@/components/FadeInSection";
 
 export const metadata: Metadata = {
@@ -61,11 +62,15 @@ export default function ProfilePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeInSection>
-              <div className="aspect-[3/4] max-w-md bg-gradient-to-br from-white/5 to-white/[0.02] rounded-sm flex items-center justify-center mx-auto lg:mx-0">
-                <div className="text-center">
-                  <p className="font-serif text-8xl text-white/10">H</p>
-                  <p className="text-xs text-white/20 tracking-[0.3em] mt-4">HIDEKAZU MORIYUKI</p>
-                </div>
+              <div className="aspect-[3/4] max-w-md rounded-sm overflow-hidden relative mx-auto lg:mx-0">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="森行秀和"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 448px"
+                />
               </div>
             </FadeInSection>
 

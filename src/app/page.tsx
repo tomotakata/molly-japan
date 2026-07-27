@@ -263,11 +263,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeInSection>
-              <div className="aspect-square max-w-sm bg-gradient-to-br from-white/5 to-white/[0.02] rounded-sm flex items-center justify-center">
-                <div className="text-center">
-                  <p className="font-serif text-7xl text-white/10">H</p>
-                  <p className="text-xs text-white/20 tracking-[0.3em] mt-2">HIDEKAZU MORIYUKI</p>
-                </div>
+              <div className="aspect-square max-w-sm rounded-sm overflow-hidden relative">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="森行秀和"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 384px"
+                />
               </div>
             </FadeInSection>
 
