@@ -16,20 +16,24 @@ export default function LoginPage() {
     setError("");
     setLoading(true);
 
-    const supabase = createClient();
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    try {
+      const supabase = createClient();
+      const { error: authError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-    if (error) {
-      setError("メールアドレスまたはパスワードが正しくありません");
+      if (authError) {
+        setError("メールアドレスまたはパスワードが正しくありません: " + authError.message);
+        setLoading(false);
+        return;
+      }
+
+      window.location.href = "/admin";
+    } catch (err) {
+      setError("ログインに失敗しました。もう一度お試しください。");
       setLoading(false);
-      return;
     }
-
-    router.push("/admin");
-    router.refresh();
   };
 
   return (
