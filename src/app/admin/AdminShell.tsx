@@ -6,8 +6,16 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import type { User } from "@supabase/supabase-js";
+import type { UserRole } from "@/lib/roles";
 
-const sideNavItems = [
+type NavItem = {
+  href: string;
+  label: string;
+  icon: React.ReactNode;
+  minRole?: UserRole;
+};
+
+const sideNavItems: NavItem[] = [
   {
     href: "/admin",
     label: "ダッシュボード",
@@ -29,24 +37,50 @@ const sideNavItems = [
   {
     href: "/admin/contacts",
     label: "お問い合わせ",
+    minRole: "admin",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
   },
+  {
+    href: "/admin/users",
+    label: "ユーザー管理",
+    minRole: "admin",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    ),
+  },
 ];
+
+const roleHierarchy: Record<UserRole, number> = {
+  owner: 4,
+  admin: 3,
+  editor: 2,
+  viewer: 1,
+};
 
 export default function AdminShell({
   user,
+  userRole,
   children,
 }: {
   user: User;
+  userRole?: UserRole;
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const role = userRole || "viewer";
+
+  const visibleNavItems = sideNavItems.filter((item) => {
+    if (!item.minRole) return true;
+    return roleHierarchy[role] >= roleHierarchy[item.minRole];
+  });
 
   const handleLogout = async () => {
     const supabase = createClient();
@@ -114,7 +148,7 @@ export default function AdminShell({
         {/* サイドバー - デスクトップ */}
         <aside className="hidden lg:flex flex-col w-56 bg-gray-900 border-r border-white/10 shrink-0">
           <nav className="flex-1 py-4">
-            {sideNavItems.map((item) => (
+            {visibleNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -157,7 +191,7 @@ export default function AdminShell({
           }`}
         >
           <nav className="py-4">
-            {sideNavItems.map((item) => (
+            {visibleNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

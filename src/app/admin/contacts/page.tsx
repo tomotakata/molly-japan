@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import AdminShell from "../AdminShell";
 import MarkAsRead from "./MarkAsRead";
+import { getUserRole } from "@/lib/roles";
 
 export const dynamic = "force-dynamic";
 
@@ -12,6 +13,7 @@ export default async function AdminContactsPage() {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/admin/login");
+  const currentUser = await getUserRole();
 
   const { data: contacts } = await supabase
     .from("contacts")
@@ -19,7 +21,7 @@ export default async function AdminContactsPage() {
     .order("created_at", { ascending: false });
 
   return (
-    <AdminShell user={user}>
+    <AdminShell user={user} userRole={currentUser?.role}>
       <div className="max-w-5xl mx-auto px-6 py-8">
         <h1 className="text-2xl font-bold mb-6">お問い合わせ管理</h1>
 

@@ -3,6 +3,7 @@ import { redirect, notFound } from "next/navigation";
 import Link from "next/link";
 import AdminShell from "../../AdminShell";
 import MarkAsRead from "../MarkAsRead";
+import { getUserRole } from "@/lib/roles";
 
 export const dynamic = "force-dynamic";
 
@@ -17,6 +18,7 @@ export default async function ContactDetailPage({ params }: Props) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/admin/login");
+  const currentUser = await getUserRole();
 
   const { data: contact } = await supabase
     .from("contacts")
@@ -32,7 +34,7 @@ export default async function ContactDetailPage({ params }: Props) {
   }
 
   return (
-    <AdminShell user={user}>
+    <AdminShell user={user} userRole={currentUser?.role}>
       <div className="max-w-3xl mx-auto px-6 py-8">
         <div className="mb-6">
           <Link

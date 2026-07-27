@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import AdminShell from "../../AdminShell";
 import NewsForm from "../NewsForm";
+import { getUserRole } from "@/lib/roles";
 
 export const dynamic = "force-dynamic";
 
@@ -12,9 +13,10 @@ export default async function NewNewsPage() {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/admin/login");
+  const currentUser = await getUserRole();
 
   return (
-    <AdminShell user={user}>
+    <AdminShell user={user} userRole={currentUser?.role}>
       <div className="max-w-3xl mx-auto px-6 py-8">
         <div className="mb-6">
           <Link

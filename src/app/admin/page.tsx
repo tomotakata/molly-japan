@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import AdminShell from "./AdminShell";
+import { getUserRole } from "@/lib/roles";
 
 export const dynamic = "force-dynamic";
 
@@ -12,6 +13,8 @@ export default async function AdminDashboard() {
   } = await supabase.auth.getUser();
 
   if (!user) redirect("/admin/login");
+
+  const currentUser = await getUserRole();
 
   const { count: newsCount } = await supabase
     .from("news")
@@ -27,7 +30,7 @@ export default async function AdminDashboard() {
     .eq("read", false);
 
   return (
-    <AdminShell user={user}>
+    <AdminShell user={user} userRole={currentUser?.role}>
       <div className="max-w-5xl mx-auto px-6 py-8">
         <h1 className="text-2xl font-bold mb-8">ダッシュボード</h1>
 
