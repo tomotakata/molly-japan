@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerNav = [
   { href: "/", label: "Home" },
@@ -45,9 +46,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           <div>
-            <h3 className="font-serif text-2xl text-white tracking-wider mb-2">
-              Molly
-            </h3>
+            <Image
+              src="/images/logo-white.png"
+              alt="株式会社Molly"
+              width={64}
+              height={64}
+              className="w-14 h-14 object-contain mb-4"
+            />
             <p className="text-xs tracking-[0.3em] text-white/40 mb-6">
               株式会社Molly
             </p>

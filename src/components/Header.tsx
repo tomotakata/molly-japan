@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const navItems = [
@@ -33,21 +34,17 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between h-20 lg:h-24">
-            <Link href="/" className="flex flex-col">
-              <span
-                className={`font-serif text-xl lg:text-2xl font-semibold tracking-wider transition-colors duration-500 ${
-                  isScrolled ? "text-black" : "text-white"
+            <Link href="/" className="block">
+              <Image
+                src="/images/logo-white.png"
+                alt="株式会社Molly"
+                width={80}
+                height={80}
+                priority
+                className={`w-12 h-12 lg:w-14 lg:h-14 object-contain transition-all duration-500 ${
+                  isScrolled ? "invert" : ""
                 }`}
-              >
-                Molly
-              </span>
-              <span
-                className={`text-[10px] tracking-[0.3em] transition-colors duration-500 ${
-                  isScrolled ? "text-black/50" : "text-white/60"
-                }`}
-              >
-                株式会社Molly
-              </span>
+              />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-8">
