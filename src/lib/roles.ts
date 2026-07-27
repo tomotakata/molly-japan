@@ -1,4 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
+import { createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
 
 export type UserRole = "owner" | "admin" | "editor" | "viewer";
 
@@ -11,6 +13,7 @@ export type UserWithRole = {
 
 /**
  * 現在ログイン中のユーザーのロールを取得
+ * service_roleキーでRLSをバイパスして確実に取得
  */
 export async function getUserRole(): Promise<UserWithRole | null> {
   const supabase = await createClient();
@@ -20,7 +23,24 @@ export async function getUserRole(): Promise<UserWithRole | null> {
 
   if (!user) return null;
 
-  const { data } = await supabase
+  // service_roleでRLSをバイパス
+  const serviceUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!serviceUrl || !serviceKey) {
+    return null;
+  }
+
+  const serviceClient = createServerClient(serviceUrl, serviceKey, {
+    cookies: {
+      getAll() {
+        return [];
+      },
+      setAll() {},
+    },
+  });
+
+  const { data } = await serviceClient
     .from("user_roles")
     .select("*")
     .eq("user_id", user.id)
