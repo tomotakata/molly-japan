@@ -21,7 +21,7 @@ const services = [
     num: "03",
     title: "経営課題解決サポート",
     subtitle: "思考を整え、組織を動かす5つのアプローチ",
-    desc: "経営者の「モヤモヤ」を行動に変える。言葉の力で経営を整え、組織を動かすサービスです。",
+    desc: "経営者の「モヤモヤ」を行動に変える。言葉の力で経営を整え、組織を動かすサポートです。",
     href: "/service#kadai",
   },
   {
@@ -123,7 +123,7 @@ export default function Home() {
                 href="/service"
                 className="px-8 py-3.5 bg-white text-black text-sm tracking-[0.15em] hover:bg-white/90 transition-colors duration-300"
               >
-                サービスを見る
+                サポートを見る
               </Link>
               <Link
                 href="/contact"
@@ -214,7 +214,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <FadeInSection>
             <div className="text-center mb-16">
-              <p className="text-text-light text-xs tracking-[0.4em] mb-4">SERVICE</p>
+              <p className="text-text-light text-xs tracking-[0.4em] mb-4">SUPPORT</p>
               <h2 className="font-serif text-3xl lg:text-4xl text-primary tracking-wider">経営に言葉と実行力を。</h2>
               <p className="text-text-light text-sm mt-4">森行秀和の&ldquo;実践型伴走支援&rdquo;</p>
               <div className="section-divider mx-auto mt-6" />
@@ -251,7 +251,7 @@ export default function Home() {
                 href="/service"
                 className="inline-block px-10 py-3.5 border border-black text-black text-sm tracking-[0.15em] hover:bg-black hover:text-white transition-all duration-300"
               >
-                サービス一覧
+                サポート一覧
               </Link>
             </div>
           </FadeInSection>

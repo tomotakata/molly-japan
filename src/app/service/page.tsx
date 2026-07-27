@@ -3,7 +3,7 @@ import Link from "next/link";
 import FadeInSection from "@/components/FadeInSection";
 
 export const metadata: Metadata = {
-  title: "サービス",
+  title: "サポート",
   description: "経営に言葉と実行力を。森行秀和の\u201c実践型伴走支援\u201d ─ 参謀サポート、社内参謀育成、経営課題解決、人材採用・教育・評価制度設計",
 };
 
@@ -43,7 +43,7 @@ const services = [
     paragraphs: [
       "「自社の課題が何なのか、うまく言葉にできない」「社員に理念や方針が伝わらず、行動変化が起きない」",
       "「現場との温度差、人間関係の摩擦が大きくなってきている」「外部コンサルを入れたが、社内に何も残らなかった」",
-      "このような経営者の悩みに、真正面から向き合い、\u201c言葉\u201dの力で経営を整え、組織を動かすのが本サービスの本質です。",
+      "このような経営者の悩みに、真正面から向き合い、\u201c言葉\u201dの力で経営を整え、組織を動かすのが本サポートの本質です。",
     ],
     details: "言語化ワーク / 理念浸透支援 / 組織診断",
   },
@@ -96,7 +96,7 @@ export default function ServicePage() {
         <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-white/20" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <FadeInSection>
-            <p className="text-white/40 text-xs tracking-[0.4em] mb-6">SERVICE</p>
+            <p className="text-white/40 text-xs tracking-[0.4em] mb-6">SUPPORT</p>
             <h1 className="font-serif text-4xl lg:text-5xl tracking-wider mb-6">
               経営に言葉と実行力を。
             </h1>
@@ -155,11 +155,11 @@ export default function ServicePage() {
         <div className="max-w-3xl mx-auto px-6">
           <FadeInSection>
             <h2 className="font-serif text-3xl text-primary tracking-wider mb-6">
-              サービスに関するご相談
+              サポートに関するご相談
             </h2>
             <div className="section-divider mx-auto" />
             <p className="text-text-light text-sm leading-loose mt-6 mb-10">
-              各サービスの詳細やお見積もりなど、お気軽にお問い合わせください。
+              各サポートの詳細やお見積もりなど、お気軽にお問い合わせください。
             </p>
             <Link
               href="/contact"

@@ -3,7 +3,7 @@ import Link from "next/link";
 const footerNav = [
   { href: "/", label: "Home" },
   { href: "/profile", label: "代表プロフィール" },
-  { href: "/service", label: "サービス" },
+  { href: "/service", label: "サポート" },
   { href: "/company", label: "会社概要" },
   { href: "/news", label: "News" },
   { href: "/contact", label: "お問い合わせ" },
