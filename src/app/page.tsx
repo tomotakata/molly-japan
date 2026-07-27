@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import FadeInSection from "@/components/FadeInSection";
 
 const services = [
@@ -78,7 +79,25 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#111111] via-[#1a1a1a] to-[#222222]" />
+        {/* PC hero image */}
+        <Image
+          src="/images/hero-pc.jpg"
+          alt="Molly Japan"
+          fill
+          priority
+          className="object-cover hidden md:block"
+          sizes="100vw"
+        />
+        {/* SP hero image */}
+        <Image
+          src="/images/hero-sp.jpg"
+          alt="Molly Japan"
+          fill
+          priority
+          className="object-cover md:hidden"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-white/20" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
