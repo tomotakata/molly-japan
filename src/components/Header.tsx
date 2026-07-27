@@ -33,32 +33,30 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between h-20 lg:h-24">
-            {/* Logo */}
             <Link href="/" className="flex flex-col">
               <span
                 className={`font-serif text-xl lg:text-2xl font-semibold tracking-wider transition-colors duration-500 ${
-                  isScrolled ? "text-primary" : "text-white"
+                  isScrolled ? "text-black" : "text-white"
                 }`}
               >
                 Molly
               </span>
               <span
                 className={`text-[10px] tracking-[0.3em] transition-colors duration-500 ${
-                  isScrolled ? "text-text-light" : "text-white/70"
+                  isScrolled ? "text-black/50" : "text-white/60"
                 }`}
               >
                 株式会社Molly
               </span>
             </Link>
 
-            {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={`text-sm tracking-[0.15em] hover-line transition-colors duration-500 ${
-                    isScrolled ? "text-text" : "text-white"
+                    isScrolled ? "text-black/80" : "text-white/90"
                   }`}
                 >
                   {item.label}
@@ -66,13 +64,16 @@ export default function Header() {
               ))}
               <Link
                 href="/contact"
-                className="ml-4 px-6 py-2.5 border border-accent text-accent text-sm tracking-[0.15em] hover:bg-accent hover:text-white transition-all duration-300"
+                className={`ml-4 px-6 py-2.5 text-sm tracking-[0.15em] transition-all duration-300 ${
+                  isScrolled
+                    ? "border border-black text-black hover:bg-black hover:text-white"
+                    : "border border-white/50 text-white hover:bg-white hover:text-black"
+                }`}
               >
                 お問い合わせ
               </Link>
             </nav>
 
-            {/* Hamburger */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
@@ -81,18 +82,18 @@ export default function Header() {
               <span
                 className={`w-6 h-px transition-all duration-300 ${
                   isMenuOpen
-                    ? "rotate-45 translate-y-[3.5px] bg-primary"
+                    ? "rotate-45 translate-y-[3.5px] bg-black"
                     : isScrolled
-                    ? "bg-primary"
+                    ? "bg-black"
                     : "bg-white"
                 }`}
               />
               <span
                 className={`w-6 h-px transition-all duration-300 ${
                   isMenuOpen
-                    ? "-rotate-45 -translate-y-[3.5px] bg-primary"
+                    ? "-rotate-45 -translate-y-[3.5px] bg-black"
                     : isScrolled
-                    ? "bg-primary"
+                    ? "bg-black"
                     : "bg-white"
                 }`}
               />
@@ -101,7 +102,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
       <div
         className={`fixed inset-0 z-40 bg-white transition-all duration-500 ${
           isMenuOpen
@@ -115,7 +115,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className="font-serif text-2xl tracking-[0.2em] text-primary hover:text-accent transition-colors"
+              className="font-serif text-2xl tracking-[0.2em] text-black hover:text-black/50 transition-colors"
             >
               {item.label}
             </Link>
@@ -123,7 +123,7 @@ export default function Header() {
           <Link
             href="/contact"
             onClick={() => setIsMenuOpen(false)}
-            className="mt-4 px-8 py-3 border border-accent text-accent tracking-[0.15em] hover:bg-accent hover:text-white transition-all duration-300"
+            className="mt-4 px-8 py-3 border border-black text-black tracking-[0.15em] hover:bg-black hover:text-white transition-all duration-300"
           >
             お問い合わせ
           </Link>

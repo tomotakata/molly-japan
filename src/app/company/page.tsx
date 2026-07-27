@@ -27,12 +27,12 @@ export default function CompanyPage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-36 bg-bg-dark text-white overflow-hidden">
-        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-accent/40" />
+        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-white/20" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-6">COMPANY</p>
+            <p className="text-white/40 text-xs tracking-[0.4em] mb-6">COMPANY</p>
             <h1 className="font-serif text-4xl lg:text-5xl tracking-wider">会社概要</h1>
-            <div className="section-divider mx-auto mt-6" />
+            <div className="w-16 h-px bg-white/30 mx-auto mt-6" />
           </FadeInSection>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function CompanyPage() {
                   key={i}
                   className="flex flex-col md:flex-row border-b border-border py-6"
                 >
-                  <dt className="md:w-1/3 text-xs text-accent tracking-[0.2em] font-medium mb-2 md:mb-0 md:pt-0.5">
+                  <dt className="md:w-1/3 text-xs text-text-light tracking-[0.2em] font-medium mb-2 md:mb-0 md:pt-0.5">
                     {item.label}
                   </dt>
                   <dd className="md:w-2/3 text-sm text-text leading-relaxed">
@@ -64,7 +64,7 @@ export default function CompanyPage() {
       <section className="py-24 lg:py-36 bg-bg-section">
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-4">ACCESS</p>
+            <p className="text-text-light text-xs tracking-[0.4em] mb-4">ACCESS</p>
             <h2 className="font-serif text-3xl text-primary tracking-wider mb-8">アクセス</h2>
             <div className="section-divider" />
           </FadeInSection>
@@ -92,18 +92,18 @@ export default function CompanyPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-[#1a1a2e] to-[#0f3460] text-white text-center">
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-[#111111] to-[#222222] text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-6">CONTACT</p>
+            <p className="text-white/40 text-xs tracking-[0.4em] mb-6">CONTACT</p>
             <h2 className="font-serif text-3xl tracking-wider mb-6">お問い合わせ</h2>
-            <div className="section-divider mx-auto" />
-            <p className="text-white/60 text-sm leading-loose mt-6 mb-10">
+            <div className="w-16 h-px bg-white/30 mx-auto" />
+            <p className="text-white/50 text-sm leading-loose mt-6 mb-10">
               経営に関するご相談は、お気軽にお問い合わせください。
             </p>
             <Link
               href="/contact"
-              className="inline-block px-12 py-4 bg-accent text-white text-sm tracking-[0.2em] hover:bg-accent-light transition-colors duration-300"
+              className="inline-block px-12 py-4 bg-white text-black text-sm tracking-[0.2em] hover:bg-white/90 transition-colors duration-300"
             >
               お問い合わせ
             </Link>

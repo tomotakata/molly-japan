@@ -11,15 +11,15 @@ export default function ContactPage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-36 bg-bg-dark text-white overflow-hidden">
-        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-accent/40" />
+        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-white/20" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-6">CONTACT</p>
+            <p className="text-white/40 text-xs tracking-[0.4em] mb-6">CONTACT</p>
             <h1 className="font-serif text-4xl lg:text-5xl tracking-wider mb-6">
               お問い合わせ
             </h1>
-            <div className="section-divider mx-auto" />
-            <p className="text-white/60 text-sm leading-loose mt-6 max-w-2xl mx-auto">
+            <div className="w-16 h-px bg-white/30 mx-auto" />
+            <p className="text-white/50 text-sm leading-loose mt-6 max-w-2xl mx-auto">
               経営課題は、言葉になると動き出します。
               <br />
               まだ整理されていなくても構いません。お気軽にご相談ください。
@@ -33,62 +33,57 @@ export default function ContactPage() {
         <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <FadeInSection>
             <form className="space-y-8">
-              {/* Name */}
               <div>
-                <label className="block text-xs text-accent tracking-[0.2em] mb-2">
-                  お名前 <span className="text-red-400">*</span>
+                <label className="block text-xs text-text-light tracking-[0.2em] mb-2">
+                  お名前 <span className="text-black">*</span>
                 </label>
                 <input
                   type="text"
                   required
-                  className="w-full border-b border-border bg-transparent py-3 text-sm text-text outline-none focus:border-accent transition-colors"
+                  className="w-full border-b border-border bg-transparent py-3 text-sm text-text outline-none focus:border-black transition-colors"
                   placeholder="山田 太郎"
                 />
               </div>
 
-              {/* Company */}
               <div>
-                <label className="block text-xs text-accent tracking-[0.2em] mb-2">
+                <label className="block text-xs text-text-light tracking-[0.2em] mb-2">
                   会社名
                 </label>
                 <input
                   type="text"
-                  className="w-full border-b border-border bg-transparent py-3 text-sm text-text outline-none focus:border-accent transition-colors"
+                  className="w-full border-b border-border bg-transparent py-3 text-sm text-text outline-none focus:border-black transition-colors"
                   placeholder="株式会社○○"
                 />
               </div>
 
-              {/* Email */}
               <div>
-                <label className="block text-xs text-accent tracking-[0.2em] mb-2">
-                  メールアドレス <span className="text-red-400">*</span>
+                <label className="block text-xs text-text-light tracking-[0.2em] mb-2">
+                  メールアドレス <span className="text-black">*</span>
                 </label>
                 <input
                   type="email"
                   required
-                  className="w-full border-b border-border bg-transparent py-3 text-sm text-text outline-none focus:border-accent transition-colors"
+                  className="w-full border-b border-border bg-transparent py-3 text-sm text-text outline-none focus:border-black transition-colors"
                   placeholder="example@email.com"
                 />
               </div>
 
-              {/* Phone */}
               <div>
-                <label className="block text-xs text-accent tracking-[0.2em] mb-2">
+                <label className="block text-xs text-text-light tracking-[0.2em] mb-2">
                   電話番号
                 </label>
                 <input
                   type="tel"
-                  className="w-full border-b border-border bg-transparent py-3 text-sm text-text outline-none focus:border-accent transition-colors"
+                  className="w-full border-b border-border bg-transparent py-3 text-sm text-text outline-none focus:border-black transition-colors"
                   placeholder="090-0000-0000"
                 />
               </div>
 
-              {/* Category */}
               <div>
-                <label className="block text-xs text-accent tracking-[0.2em] mb-2">
+                <label className="block text-xs text-text-light tracking-[0.2em] mb-2">
                   お問い合わせ種別
                 </label>
-                <select className="w-full border-b border-border bg-transparent py-3 text-sm text-text outline-none focus:border-accent transition-colors appearance-none cursor-pointer">
+                <select className="w-full border-b border-border bg-transparent py-3 text-sm text-text outline-none focus:border-black transition-colors appearance-none cursor-pointer">
                   <option value="">選択してください</option>
                   <option value="sanbo">参謀サポートについて</option>
                   <option value="ikusei">社内参謀育成サポートについて</option>
@@ -100,24 +95,22 @@ export default function ContactPage() {
                 </select>
               </div>
 
-              {/* Message */}
               <div>
-                <label className="block text-xs text-accent tracking-[0.2em] mb-2">
-                  お問い合わせ内容 <span className="text-red-400">*</span>
+                <label className="block text-xs text-text-light tracking-[0.2em] mb-2">
+                  お問い合わせ内容 <span className="text-black">*</span>
                 </label>
                 <textarea
                   required
                   rows={6}
-                  className="w-full border border-border bg-transparent p-4 text-sm text-text outline-none focus:border-accent transition-colors resize-none"
+                  className="w-full border border-border bg-transparent p-4 text-sm text-text outline-none focus:border-black transition-colors resize-none"
                   placeholder="ご相談内容をお書きください"
                 />
               </div>
 
-              {/* Submit */}
               <div className="text-center pt-4">
                 <button
                   type="submit"
-                  className="px-16 py-4 bg-accent text-white text-sm tracking-[0.2em] hover:bg-accent-light transition-colors duration-300 cursor-pointer"
+                  className="px-16 py-4 bg-black text-white text-sm tracking-[0.2em] hover:bg-black/80 transition-colors duration-300 cursor-pointer"
                 >
                   送信する
                 </button>
@@ -125,13 +118,12 @@ export default function ContactPage() {
             </form>
           </FadeInSection>
 
-          {/* Contact info */}
           <FadeInSection delay={200}>
             <div className="mt-20 pt-16 border-t border-border text-center">
-              <p className="text-xs text-accent tracking-[0.3em] mb-4">MAIL</p>
+              <p className="text-xs text-text-light tracking-[0.3em] mb-4">MAIL</p>
               <a
                 href="mailto:info@molly-japan.co.jp"
-                className="text-sm text-text hover:text-accent transition-colors"
+                className="text-sm text-text hover:text-black transition-colors"
               >
                 info@molly-japan.co.jp
               </a>

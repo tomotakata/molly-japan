@@ -44,24 +44,22 @@ export default function Footer() {
     <footer className="bg-bg-dark text-white/80">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-          {/* Brand */}
           <div>
             <h3 className="font-serif text-2xl text-white tracking-wider mb-2">
               Molly
             </h3>
-            <p className="text-xs tracking-[0.3em] text-white/50 mb-6">
+            <p className="text-xs tracking-[0.3em] text-white/40 mb-6">
               株式会社Molly
             </p>
-            <p className="text-sm leading-relaxed text-white/60">
+            <p className="text-sm leading-relaxed text-white/50">
               孤独な経営者の味方として、
               <br />
               あなたの今と未来に伴走します。
             </p>
           </div>
 
-          {/* Nav */}
           <div>
-            <h4 className="text-xs tracking-[0.3em] text-accent mb-6">
+            <h4 className="text-xs tracking-[0.3em] text-white/40 mb-6">
               NAVIGATION
             </h4>
             <nav className="flex flex-col gap-3">
@@ -69,7 +67,7 @@ export default function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-white/60 hover:text-accent transition-colors"
+                  className="text-sm text-white/50 hover:text-white transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -77,12 +75,11 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Info */}
           <div>
-            <h4 className="text-xs tracking-[0.3em] text-accent mb-6">
+            <h4 className="text-xs tracking-[0.3em] text-white/40 mb-6">
               COMPANY INFO
             </h4>
-            <div className="space-y-3 text-sm text-white/60">
+            <div className="space-y-3 text-sm text-white/50">
               <p>〒633-0063</p>
               <p>奈良県桜井市川合253-15-103</p>
               <p>info@molly-japan.co.jp</p>
@@ -96,7 +93,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  className="text-white/40 hover:text-accent transition-colors"
+                  className="text-white/30 hover:text-white transition-colors"
                 >
                   {link.icon}
                 </a>
@@ -105,9 +102,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="mt-16 pt-8 border-t border-white/10 text-center">
-          <p className="text-xs text-white/30 tracking-[0.2em]">
+          <p className="text-xs text-white/25 tracking-[0.2em]">
             &copy; {new Date().getFullYear()} Molly Co., Ltd. All Rights
             Reserved.
           </p>

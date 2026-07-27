@@ -57,25 +57,25 @@ export default function ProfilePage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-36 bg-bg-dark text-white overflow-hidden">
-        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-accent/40" />
+        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-white/20" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeInSection>
               <div className="aspect-[3/4] max-w-md bg-gradient-to-br from-white/5 to-white/[0.02] rounded-sm flex items-center justify-center mx-auto lg:mx-0">
                 <div className="text-center">
-                  <p className="font-serif text-8xl text-accent/20">H</p>
-                  <p className="text-xs text-white/30 tracking-[0.3em] mt-4">HIDEKAZU MORIYUKI</p>
+                  <p className="font-serif text-8xl text-white/10">H</p>
+                  <p className="text-xs text-white/20 tracking-[0.3em] mt-4">HIDEKAZU MORIYUKI</p>
                 </div>
               </div>
             </FadeInSection>
 
             <FadeInSection delay={200}>
-              <p className="text-accent text-xs tracking-[0.4em] mb-4">PROFILE</p>
+              <p className="text-white/40 text-xs tracking-[0.4em] mb-4">PROFILE</p>
               <h1 className="font-serif text-4xl lg:text-5xl tracking-wider mb-4">森行秀和</h1>
-              <p className="text-xs text-white/50 tracking-[0.2em] mb-8">もりゆき・ひでかず</p>
-              <div className="w-16 h-px bg-accent mb-8" />
-              <p className="font-serif text-2xl text-accent tracking-wider mb-6">孤独な経営者の味方</p>
-              <p className="text-white/60 text-sm leading-loose mb-4">
+              <p className="text-xs text-white/40 tracking-[0.2em] mb-8">もりゆき・ひでかず</p>
+              <div className="w-16 h-px bg-white/30 mb-8" />
+              <p className="font-serif text-2xl text-white/80 tracking-wider mb-6">孤独な経営者の味方</p>
+              <p className="text-white/50 text-sm leading-loose mb-4">
                 株式会社Molly 代表取締役／株式会社ULAS COO
               </p>
             </FadeInSection>
@@ -87,7 +87,7 @@ export default function ProfilePage() {
       <section className="py-24 lg:py-36 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-4">DEFINITION</p>
+            <p className="text-text-light text-xs tracking-[0.4em] mb-4">DEFINITION</p>
             <h2 className="font-serif text-3xl text-primary tracking-wider mb-8">定義</h2>
             <div className="section-divider" />
           </FadeInSection>
@@ -114,7 +114,7 @@ export default function ProfilePage() {
       <section className="py-24 lg:py-36 bg-bg-section">
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-4">ESSENCE</p>
+            <p className="text-text-light text-xs tracking-[0.4em] mb-4">ESSENCE</p>
             <h2 className="font-serif text-3xl text-primary tracking-wider mb-8">本質</h2>
             <div className="section-divider" />
           </FadeInSection>
@@ -131,15 +131,15 @@ export default function ProfilePage() {
               </p>
               <ul className="space-y-2 pl-4">
                 <li className="flex items-start gap-3">
-                  <span className="text-accent mt-1">─</span>
+                  <span className="text-black/30 mt-1">─</span>
                   <span>社長の内的構造を整え</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-accent mt-1">─</span>
+                  <span className="text-black/30 mt-1">─</span>
                   <span>組織・戦略・事業の外的構造と同期させ</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-accent mt-1">─</span>
+                  <span className="text-black/30 mt-1">─</span>
                   <span>成果が積み上がる仕組みをつくる</span>
                 </li>
               </ul>
@@ -155,7 +155,7 @@ export default function ProfilePage() {
       <section className="py-24 lg:py-36 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-4">CAREER</p>
+            <p className="text-text-light text-xs tracking-[0.4em] mb-4">CAREER</p>
             <h2 className="font-serif text-3xl text-primary tracking-wider mb-8">
               実務の積み重ねがつくった参謀力
             </h2>
@@ -165,14 +165,14 @@ export default function ProfilePage() {
           <div className="mt-12 space-y-16">
             {career.map((item, i) => (
               <FadeInSection key={i} delay={i * 150}>
-                <div className="border-l-2 border-accent/30 pl-8">
-                  <span className="text-accent text-xs tracking-[0.3em]">{item.period}</span>
+                <div className="border-l-2 border-black/10 pl-8">
+                  <span className="text-text-light text-xs tracking-[0.3em]">{item.period}</span>
                   <h3 className="font-serif text-xl text-primary mt-2 tracking-wider">{item.title}</h3>
                   <p className="text-text-light text-sm mt-1">{item.role}</p>
                   <ul className="mt-4 space-y-2">
                     {item.achievements.map((a, j) => (
                       <li key={j} className="flex items-start gap-3 text-sm text-text-light">
-                        <span className="text-accent mt-1 shrink-0">&#9670;</span>
+                        <span className="text-black/30 mt-1 shrink-0">&#9670;</span>
                         <span>{a}</span>
                       </li>
                     ))}
@@ -191,7 +191,7 @@ export default function ProfilePage() {
       <section className="py-24 lg:py-36 bg-bg-section">
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-4">CURRENT</p>
+            <p className="text-text-light text-xs tracking-[0.4em] mb-4">CURRENT</p>
             <h2 className="font-serif text-3xl text-primary tracking-wider mb-8">現在の活動</h2>
             <div className="section-divider" />
           </FadeInSection>
@@ -200,9 +200,9 @@ export default function ProfilePage() {
             {currentRoles.map((item, i) => (
               <FadeInSection key={i} delay={i * 150}>
                 <div className="bg-white p-8 lg:p-10 h-full">
-                  <span className="text-accent text-xs tracking-[0.3em]">{item.role}</span>
+                  <span className="text-text-light text-xs tracking-[0.3em]">{item.role}</span>
                   <h3 className="font-serif text-xl text-primary mt-2 tracking-wider">{item.company}</h3>
-                  <div className="w-10 h-px bg-accent/50 my-4" />
+                  <div className="w-10 h-px bg-black/15 my-4" />
                   <p className="text-text-light text-sm leading-loose">{item.desc}</p>
                 </div>
               </FadeInSection>
@@ -215,17 +215,17 @@ export default function ProfilePage() {
       <section className="py-24 lg:py-36 bg-bg-dark text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-6">BELIEF</p>
+            <p className="text-white/40 text-xs tracking-[0.4em] mb-6">BELIEF</p>
             <h2 className="font-serif text-3xl lg:text-4xl tracking-wider leading-relaxed mb-8">信念</h2>
-            <div className="section-divider mx-auto" />
-            <div className="mt-8 space-y-6 text-white/60 text-sm leading-loose">
+            <div className="w-16 h-px bg-white/30 mx-auto" />
+            <div className="mt-8 space-y-6 text-white/50 text-sm leading-loose">
               <p>企業の成長を決めるのは、戦略ではない。動く&ldquo;人&rdquo;である。</p>
               <p>そして人が動くためには、&ldquo;構造化された意志&rdquo;が必要だ。</p>
               <p>
                 私は社長の中に眠る、まだ言語化されていない核を掘り起こし、
                 それを構造に翻訳し、組織と事業へと実装する。
               </p>
-              <p className="font-serif text-xl text-accent tracking-wider pt-4">
+              <p className="font-serif text-xl text-white/80 tracking-wider pt-4">
                 社長の今を整え、未来を設計する。
                 <br />
                 それが、「社長の今と未来を支える参謀」という仕事である。

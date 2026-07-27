@@ -93,18 +93,18 @@ export default function ServicePage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-36 bg-bg-dark text-white overflow-hidden">
-        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-accent/40" />
+        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-white/20" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-6">SERVICE</p>
+            <p className="text-white/40 text-xs tracking-[0.4em] mb-6">SERVICE</p>
             <h1 className="font-serif text-4xl lg:text-5xl tracking-wider mb-6">
               経営に言葉と実行力を。
             </h1>
-            <p className="text-white/60 text-sm">
+            <p className="text-white/50 text-sm">
               森行秀和の&ldquo;実践型伴走支援&rdquo;
             </p>
-            <div className="section-divider mx-auto mt-6" />
-            <p className="text-white/50 text-sm leading-loose mt-8 max-w-2xl mx-auto">
+            <div className="w-16 h-px bg-white/30 mx-auto mt-6" />
+            <p className="text-white/40 text-sm leading-loose mt-8 max-w-2xl mx-auto">
               「現場が動かない」「社員に伝わらない」「課題が言葉にならない」「ひとりで抱えて限界を感じている」
               <br />
               こうした経営者の声に寄り添い、&ldquo;言語化&rdquo;と&ldquo;実行力&rdquo;で経営を前に進める伴走支援です。
@@ -117,11 +117,11 @@ export default function ServicePage() {
       <section className="py-24 lg:py-36 bg-white">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <div className="space-y-24">
-            {services.map((svc, i) => (
+            {services.map((svc) => (
               <FadeInSection key={svc.id} delay={0}>
                 <div id={svc.id} className="scroll-mt-32">
                   <div className="flex items-start gap-6 lg:gap-10">
-                    <span className="font-serif text-5xl lg:text-6xl text-accent/20 shrink-0">
+                    <span className="font-serif text-5xl lg:text-6xl text-black/10 shrink-0">
                       {svc.num}
                     </span>
                     <div className="flex-1">
@@ -163,7 +163,7 @@ export default function ServicePage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-12 py-4 bg-accent text-white text-sm tracking-[0.2em] hover:bg-accent-light transition-colors duration-300"
+              className="inline-block px-12 py-4 bg-black text-white text-sm tracking-[0.2em] hover:bg-black/80 transition-colors duration-300"
             >
               お問い合わせ
             </Link>

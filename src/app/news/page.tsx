@@ -34,12 +34,12 @@ export default function NewsPage() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-36 bg-bg-dark text-white overflow-hidden">
-        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-accent/40" />
+        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-white/20" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-6">NEWS</p>
+            <p className="text-white/40 text-xs tracking-[0.4em] mb-6">NEWS</p>
             <h1 className="font-serif text-4xl lg:text-5xl tracking-wider">お知らせ</h1>
-            <div className="section-divider mx-auto mt-6" />
+            <div className="w-16 h-px bg-white/30 mx-auto mt-6" />
           </FadeInSection>
         </div>
       </section>
@@ -50,9 +50,9 @@ export default function NewsPage() {
           <div className="space-y-0">
             {newsItems.map((item, i) => (
               <FadeInSection key={i} delay={i * 100}>
-                <article className="group py-10 border-b border-border hover:border-accent/50 transition-colors cursor-pointer">
-                  <time className="text-xs text-accent tracking-[0.2em]">{item.date}</time>
-                  <h2 className="font-serif text-xl text-primary mt-3 tracking-wider group-hover:text-accent transition-colors">
+                <article className="group py-10 border-b border-border hover:border-black/30 transition-colors cursor-pointer">
+                  <time className="text-xs text-text-light tracking-[0.2em]">{item.date}</time>
+                  <h2 className="font-serif text-xl text-primary mt-3 tracking-wider group-hover:text-black transition-colors">
                     {item.title}
                   </h2>
                   <p className="text-text-light text-sm mt-3 leading-relaxed">

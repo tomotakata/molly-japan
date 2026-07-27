@@ -40,7 +40,7 @@ const services = [
   {
     num: "06",
     title: "人材教育サポート",
-    subtitle: "実践につながる\u201c生きた研修\u201dを。",
+    subtitle: "\u201c生きた研修\u201dで実践につなげる。",
     desc: "知識のインプットにとどまらず、行動と成果に結びつける実践型プログラムです。",
     href: "/service#kyoiku",
   },
@@ -78,21 +78,21 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]" />
-        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-[#c9a96e]/40" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#111111] via-[#1a1a1a] to-[#222222]" />
+        <div className="absolute top-0 left-1/2 w-px h-32 bg-gradient-to-b from-transparent to-white/20" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
           <div className="max-w-3xl">
-            <p className="text-accent text-xs tracking-[0.4em] mb-6 animate-fade-in">
+            <p className="text-white/50 text-xs tracking-[0.4em] mb-6 animate-fade-in">
               COO型参謀 ─ 株式会社Molly
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight tracking-wider mb-8 animate-fade-in-up">
               孤独な経営者の
               <br />
-              <span className="text-accent">味方</span>でありたい。
+              <span className="text-white/90 underline underline-offset-8 decoration-1">味方</span>でありたい。
             </h1>
-            <div className="w-16 h-px bg-accent mb-8 animate-fade-in animation-delay-200" />
-            <p className="text-white/70 text-sm md:text-base leading-loose max-w-xl animate-fade-in-up animation-delay-400">
+            <div className="w-16 h-px bg-white/40 mb-8 animate-fade-in animation-delay-200" />
+            <p className="text-white/60 text-sm md:text-base leading-loose max-w-xl animate-fade-in-up animation-delay-400">
               経営者は、資金繰り、人材、組織、事業の成長など、
               <br className="hidden md:block" />
               正解のない問いに向き合い続けています。
@@ -102,13 +102,13 @@ export default function Home() {
             <div className="mt-10 flex flex-wrap gap-4 animate-fade-in-up animation-delay-600">
               <Link
                 href="/service"
-                className="px-8 py-3.5 bg-accent text-white text-sm tracking-[0.15em] hover:bg-accent-light transition-colors duration-300"
+                className="px-8 py-3.5 bg-white text-black text-sm tracking-[0.15em] hover:bg-white/90 transition-colors duration-300"
               >
                 サービスを見る
               </Link>
               <Link
                 href="/contact"
-                className="px-8 py-3.5 border border-white/30 text-white text-sm tracking-[0.15em] hover:border-accent hover:text-accent transition-all duration-300"
+                className="px-8 py-3.5 border border-white/40 text-white text-sm tracking-[0.15em] hover:border-white hover:bg-white/10 transition-all duration-300"
               >
                 お問い合わせ
               </Link>
@@ -117,8 +117,8 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in animation-delay-800">
-          <span className="text-white/40 text-[10px] tracking-[0.3em]">SCROLL</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent" />
+          <span className="text-white/30 text-[10px] tracking-[0.3em]">SCROLL</span>
+          <div className="w-px h-12 bg-gradient-to-b from-white/30 to-transparent" />
         </div>
       </section>
 
@@ -127,7 +127,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <FadeInSection>
-              <p className="text-accent text-xs tracking-[0.4em] mb-4">CONCEPT</p>
+              <p className="text-text-light text-xs tracking-[0.4em] mb-4">CONCEPT</p>
               <h2 className="font-serif text-3xl lg:text-4xl text-primary leading-relaxed tracking-wider mb-6">
                 経営課題は、
                 <br />
@@ -151,14 +151,14 @@ export default function Home() {
             <FadeInSection delay={200}>
               <div className="relative">
                 <div className="aspect-[4/5] bg-bg-section rounded-sm overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-bg-section to-[#e8e4dc] flex items-center justify-center">
+                  <div className="w-full h-full bg-gradient-to-br from-[#f5f5f5] to-[#e8e8e8] flex items-center justify-center">
                     <div className="text-center">
-                      <p className="font-serif text-6xl text-accent/20 tracking-widest">M</p>
+                      <p className="font-serif text-6xl text-black/10 tracking-widest">M</p>
                       <p className="text-xs text-text-light tracking-[0.3em] mt-2">MOLLY</p>
                     </div>
                   </div>
                 </div>
-                <div className="absolute -bottom-6 -left-6 w-24 h-24 border border-accent/30" />
+                <div className="absolute -bottom-6 -left-6 w-24 h-24 border border-black/10" />
               </div>
             </FadeInSection>
           </div>
@@ -170,7 +170,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <FadeInSection>
             <div className="text-center mb-16">
-              <p className="text-accent text-xs tracking-[0.4em] mb-4">RESULTS</p>
+              <p className="text-text-light text-xs tracking-[0.4em] mb-4">RESULTS</p>
               <h2 className="font-serif text-3xl lg:text-4xl text-primary tracking-wider">サポート実績</h2>
               <div className="section-divider mx-auto mt-6" />
             </div>
@@ -180,7 +180,7 @@ export default function Home() {
             {results.map((item, i) => (
               <FadeInSection key={i} delay={i * 100}>
                 <div className="bg-white p-8 lg:p-10 h-full">
-                  <span className="text-accent text-xs tracking-[0.3em]">{item.category}</span>
+                  <span className="text-text-light text-xs tracking-[0.3em]">{item.category}</span>
                   <p className="font-serif text-lg text-primary mt-3 leading-relaxed">{item.label}</p>
                 </div>
               </FadeInSection>
@@ -194,7 +194,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <FadeInSection>
             <div className="text-center mb-16">
-              <p className="text-accent text-xs tracking-[0.4em] mb-4">SERVICE</p>
+              <p className="text-text-light text-xs tracking-[0.4em] mb-4">SERVICE</p>
               <h2 className="font-serif text-3xl lg:text-4xl text-primary tracking-wider">経営に言葉と実行力を。</h2>
               <p className="text-text-light text-sm mt-4">森行秀和の&ldquo;実践型伴走支援&rdquo;</p>
               <div className="section-divider mx-auto mt-6" />
@@ -205,18 +205,18 @@ export default function Home() {
             {services.map((svc, i) => (
               <FadeInSection key={i} delay={i * 80}>
                 <Link href={svc.href} className="group block">
-                  <div className="flex items-start gap-6 lg:gap-10 py-8 border-b border-border group-hover:border-accent/50 transition-colors">
-                    <span className="font-serif text-3xl lg:text-4xl text-accent/30 group-hover:text-accent transition-colors shrink-0">
+                  <div className="flex items-start gap-6 lg:gap-10 py-8 border-b border-border group-hover:border-black/30 transition-colors">
+                    <span className="font-serif text-3xl lg:text-4xl text-black/10 group-hover:text-black/30 transition-colors shrink-0">
                       {svc.num}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-serif text-xl lg:text-2xl text-primary group-hover:text-accent transition-colors tracking-wider">
+                      <h3 className="font-serif text-xl lg:text-2xl text-primary group-hover:text-black transition-colors tracking-wider">
                         {svc.title}
                       </h3>
                       <p className="text-text-light text-xs tracking-[0.1em] mt-1">{svc.subtitle}</p>
                       <p className="text-text-light text-sm mt-3 leading-relaxed">{svc.desc}</p>
                     </div>
-                    <span className="text-accent/30 group-hover:text-accent group-hover:translate-x-1 transition-all shrink-0 pt-2">
+                    <span className="text-black/20 group-hover:text-black group-hover:translate-x-1 transition-all shrink-0 pt-2">
                       &rarr;
                     </span>
                   </div>
@@ -229,7 +229,7 @@ export default function Home() {
             <div className="text-center mt-12">
               <Link
                 href="/service"
-                className="inline-block px-10 py-3.5 border border-accent text-accent text-sm tracking-[0.15em] hover:bg-accent hover:text-white transition-all duration-300"
+                className="inline-block px-10 py-3.5 border border-black text-black text-sm tracking-[0.15em] hover:bg-black hover:text-white transition-all duration-300"
               >
                 サービス一覧
               </Link>
@@ -245,17 +245,17 @@ export default function Home() {
             <FadeInSection>
               <div className="aspect-square max-w-sm bg-gradient-to-br from-white/5 to-white/[0.02] rounded-sm flex items-center justify-center">
                 <div className="text-center">
-                  <p className="font-serif text-7xl text-accent/20">H</p>
-                  <p className="text-xs text-white/30 tracking-[0.3em] mt-2">HIDEKAZU MORIYUKI</p>
+                  <p className="font-serif text-7xl text-white/10">H</p>
+                  <p className="text-xs text-white/20 tracking-[0.3em] mt-2">HIDEKAZU MORIYUKI</p>
                 </div>
               </div>
             </FadeInSection>
 
             <FadeInSection delay={200}>
-              <p className="text-accent text-xs tracking-[0.4em] mb-4">PROFILE</p>
+              <p className="text-white/40 text-xs tracking-[0.4em] mb-4">PROFILE</p>
               <h2 className="font-serif text-3xl lg:text-4xl leading-relaxed tracking-wider mb-6">森行秀和</h2>
-              <p className="text-xs text-white/50 tracking-[0.2em] mb-6">もりゆき・ひでかず</p>
-              <div className="w-16 h-px bg-accent mb-6" />
+              <p className="text-xs text-white/40 tracking-[0.2em] mb-6">もりゆき・ひでかず</p>
+              <div className="w-16 h-px bg-white/30 mb-6" />
               <p className="text-white/60 text-sm leading-loose">
                 株式会社Molly 代表取締役／株式会社ULAS COO
               </p>
@@ -267,7 +267,7 @@ export default function Home() {
               <div className="mt-8">
                 <Link
                   href="/profile"
-                  className="inline-block px-8 py-3 border border-accent text-accent text-sm tracking-[0.15em] hover:bg-accent hover:text-white transition-all duration-300"
+                  className="inline-block px-8 py-3 border border-white/40 text-white text-sm tracking-[0.15em] hover:bg-white hover:text-black transition-all duration-300"
                 >
                   プロフィール詳細
                 </Link>
@@ -283,10 +283,10 @@ export default function Home() {
           <FadeInSection>
             <div className="flex items-end justify-between mb-12">
               <div>
-                <p className="text-accent text-xs tracking-[0.4em] mb-4">NEWS</p>
+                <p className="text-text-light text-xs tracking-[0.4em] mb-4">NEWS</p>
                 <h2 className="font-serif text-3xl lg:text-4xl text-primary tracking-wider">お知らせ</h2>
               </div>
-              <Link href="/news" className="text-sm text-accent tracking-[0.1em] hover-line hidden md:inline-block">
+              <Link href="/news" className="text-sm text-primary tracking-[0.1em] hover-line hidden md:inline-block">
                 View All &rarr;
               </Link>
             </div>
@@ -295,9 +295,9 @@ export default function Home() {
           <div className="space-y-0">
             {news.map((item, i) => (
               <FadeInSection key={i} delay={i * 80}>
-                <div className="group flex items-baseline gap-6 py-6 border-b border-border hover:border-accent/50 transition-colors cursor-pointer">
+                <div className="group flex items-baseline gap-6 py-6 border-b border-border hover:border-black/30 transition-colors cursor-pointer">
                   <time className="text-xs text-text-light tracking-[0.15em] shrink-0">{item.date}</time>
-                  <p className="text-sm text-primary group-hover:text-accent transition-colors">{item.title}</p>
+                  <p className="text-sm text-primary group-hover:text-black transition-colors">{item.title}</p>
                 </div>
               </FadeInSection>
             ))}
@@ -305,31 +305,31 @@ export default function Home() {
 
           <FadeInSection>
             <div className="text-center mt-10 md:hidden">
-              <Link href="/news" className="text-sm text-accent tracking-[0.1em]">View All &rarr;</Link>
+              <Link href="/news" className="text-sm text-primary tracking-[0.1em]">View All &rarr;</Link>
             </div>
           </FadeInSection>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-[#1a1a2e] to-[#0f3460] text-white text-center">
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-[#111111] to-[#222222] text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <FadeInSection>
-            <p className="text-accent text-xs tracking-[0.4em] mb-6">CONTACT</p>
+            <p className="text-white/40 text-xs tracking-[0.4em] mb-6">CONTACT</p>
             <h2 className="font-serif text-3xl lg:text-4xl tracking-wider leading-relaxed mb-6">
               まずは、お気軽に
               <br />
               ご相談ください。
             </h2>
             <div className="section-divider mx-auto" />
-            <p className="text-white/60 text-sm leading-loose mt-6 mb-10">
+            <p className="text-white/50 text-sm leading-loose mt-6 mb-10">
               経営課題は、言葉になると動き出します。
               <br />
               一人で抱えていることがあるなら、まだ整理されていなくても構いません。
             </p>
             <Link
               href="/contact"
-              className="inline-block px-12 py-4 bg-accent text-white text-sm tracking-[0.2em] hover:bg-accent-light transition-colors duration-300"
+              className="inline-block px-12 py-4 bg-white text-black text-sm tracking-[0.2em] hover:bg-white/90 transition-colors duration-300"
             >
               お問い合わせ
             </Link>
